@@ -1,0 +1,23 @@
+{
+   "connections":[
+       {
+           "type":"buyers",
+           "stepImage1":"https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/shared/send-receive-no-p2p/buyonline_browser1.png",
+           "stepImage2":"https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/shared/send-receive-no-p2p/buyonline_browser2.png",
+           "stepImage3":"https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/shared/send-receive-no-p2p/buyonline_browser3.png",
+           "description1":"with just an email address and password.",
+           "description2":"Securely add your cards.",
+           "description3":"Use the PayPal button to check out with just an email address and password."
+       }
+,
+       {
+        "type":"sellers",
+        "stepImage1":"https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/shared/send-receive-no-p2p/home/For_Sellers_1.png",
+        "stepImage2":"https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/shared/send-receive-no-p2p/home/For_Sellers_2.png",
+        "stepImage3":"https://www.paypalobjects.com/digitalassets/c/website/marketing/emea/shared/send-receive-no-p2p/home/For_Sellers_3.png",
+        "description1":"Set up a business account.",
+        "description2":"Choose the features you want to start with. You can go back, change or add to them later.",
+        "description3":"Integrate PayPal via a partner, a developer or by yourself."
+       }
+   ]
+}

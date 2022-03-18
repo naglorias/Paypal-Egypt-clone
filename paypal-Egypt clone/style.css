@@ -1,0 +1,678 @@
+@font-face {
+  font-family: "PayPal Font";
+  src: url("//db.onlinewebfonts.com/t/d3398b63eaca40daee65f5fa3b69402c.eot");
+  src: url("//db.onlinewebfonts.com/t/d3398b63eaca40daee65f5fa3b69402c.eot?#iefix")
+      format("embedded-opentype"),
+    url("//db.onlinewebfonts.com/t/d3398b63eaca40daee65f5fa3b69402c.woff2")
+      format("woff2"),
+    url("//db.onlinewebfonts.com/t/d3398b63eaca40daee65f5fa3b69402c.woff")
+      format("woff"),
+    url("//db.onlinewebfonts.com/t/d3398b63eaca40daee65f5fa3b69402c.ttf")
+      format("truetype"),
+    url("//db.onlinewebfonts.com/t/d3398b63eaca40daee65f5fa3b69402c.svg#PayPal Sans Small")
+      format("svg");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  font-family: "Paypal Font", sans-serif;
+  transition: margin-left 0.5s;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #2c2e2f;
+}
+
+p {
+  line-height: 1.3;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  padding: 1rem;
+}
+
+section,
+footer,
+header {
+  width: 100%;
+}
+
+/* Header */
+#header {
+  height: 70vh;
+}
+
+/* Header:Navigation */
+.top-header {
+  width: 100%;
+  max-width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  box-shadow: 0px 1.2px 8px #333;
+  position: relative;
+}
+
+.logo img {
+  width: 130px;
+}
+nav {
+  padding: 1.7rem 1rem;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.nav-links a {
+  color: #2c2e2f;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+.dropdown-a,
+.dropdown-b,
+.nav-link {
+  overflow: hidden;
+  margin-right: 1.3rem;
+  padding: 1rem;
+}
+.dropdown-a a,
+.dropdown-b a {
+  display: flex;
+  align-items: center;
+}
+.dropdown-a:hover,
+.dropdown-b:hover,
+.nav-link:hover {
+  border-bottom: 4px solid #0070ba;
+}
+.dropdown-content-a,
+.dropdown-content-b {
+  background-image: radial-gradient(
+    circle farthest-side at center bottom,
+    #009cde,
+    #003087 0
+  );
+  position: absolute;
+  top: 100%;
+  color: #fff;
+  left: 0;
+  width: 100%;
+  transform: translateY(-0.7em);
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s,
+    z-index 0s linear 0.01s;
+  opacity: 0;
+  visibility: hidden;
+}
+.dropdown-content-a .row a > *,
+.dropdown-content-b .row a > * {
+  color: #fff;
+  font-weight: 100;
+}
+.dropdown-content-a .row a > *:hover,
+.dropdown-content-b .row a > *:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content-a .row,
+.dropdown-content-b .row {
+  display: grid;
+  width: 80%;
+}
+.dropdown-content-a .row {
+  grid-template-columns: repeat(3, 1fr) 0.5fr;
+  padding: 1rem;
+  margin: -1rem auto;
+}
+
+.dropdown-content-a .row div {
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.dropdown-content-b .row {
+  grid-template-columns: repeat(2, 1fr) 0.5fr;
+  padding: 1rem;
+  margin: -1rem auto;
+}
+.dropdown-content-b .row div {
+  padding: 1rem 0;
+  text-align: left;
+}
+
+.dropdown-a:focus .dropdown-content-a,
+.dropdown-a:focus-within .dropdown-content-a,
+.dropdown-a:hover .dropdown-content-a,
+.dropdown-b:focus .dropdown-content-b,
+.dropdown-b:focus-within .dropdown-content-b,
+.dropdown-b:hover .dropdown-content-b {
+  visibility: visible; /* shows sub-menu */
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s;
+}
+
+.col .material-icons {
+  color: #fff;
+  font-size: 2em;
+  float: right;
+  cursor: pointer;
+}
+.open-caret {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
+.close-caret {
+  transform: rotate(0deg);
+  transition: all 0.25s ease-out;
+}
+.user-btns {
+  width: 200px;
+}
+.user-btns div {
+  display: flex;
+  gap: 18px;
+}
+
+.user-btns a,
+.user-btn a {
+  padding: 0.5rem 1.1rem;
+  border: 1px solid #0070ba;
+  border-radius: 30px;
+  font-size: 0.9em;
+}
+.user-btns div a:first-child,
+.user-btn a {
+  color: #0070ba;
+}
+.user-btns div a:last-child {
+  color: #fff;
+  background-color: #0070ba;
+}
+/* Header:Navigation-Mobile and Tab*/
+.top-header-mobile {
+  max-width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 1.2px 8px #333;
+
+  display: none;
+}
+.top-header-mobile > * {
+  padding: 0.7rem;
+}
+.logo-mobile img {
+  width: 46px;
+  text-align: center;
+  margin-right: 13px;
+}
+#close {
+  display: none;
+}
+.menu-close-btn a {
+  display: inline-flex;
+  justify-content: center;
+  border: 1.4px solid #0070ba;
+  color: #0070ba;
+  padding: 0.3rem 0.5rem;
+  border-radius: 30px;
+  font-size: 0.88em;
+  font-weight: 500;
+  cursor: pointer;
+}
+#close {
+  justify-content: center;
+  align-items: center;
+}
+.menu-close-btn .material-icons {
+  color: #0070ba;
+  margin-right: 6px;
+}
+.user-btn a {
+  padding: 0.6rem 1.3rem;
+  font-size: 0.78em;
+  font-weight: bold;
+}
+.top-header-mobile nav {
+  position: fixed;
+  background-image: radial-gradient(
+    circle farthest-side at center bottom,
+    #009cde,
+    #003087 0
+  );
+  width: 0px;
+  height: 100%;
+  left: -2rem;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.mob-links,
+.mob-signup {
+  height: 30%;
+}
+.mob-links ul li {
+  display: flex;
+  color: #f5f7fa;
+  align-items: center;
+
+  font-size: 0.89em;
+  margin-left: -1rem;
+}
+.mob-links ul a {
+  color: #fff;
+}
+.mob-links ul a:hover {
+  color: #2c2e2f;
+  border-bottom: 2px solid #0070ba;
+}
+.mob-links hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  width: 200px;
+  margin: 2rem auto;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
+.mob-signup {
+  text-align: center;
+}
+.mob-signup button {
+  width: 200px;
+  border: 1.4px solid #fff;
+  color: #fff;
+  border-radius: 30px;
+  background-color: transparent;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.hide {
+  visibility: hidden;
+}
+/* Header:Hero */
+.hero {
+  max-width: 100%;
+  height: 420px;
+  background-image: url("https://www.paypalobjects.com/webstatic/en_GB/mktg/wright/home/homepage-hero-1x.jpg");
+  background-position: center -66px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.8em;
+  line-height: 1.25em;
+  max-width: 700px;
+  font-weight: 400;
+  margin: auto;
+  color: #fff;
+  letter-spacing: 0.02em;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  margin-top: 2rem;
+}
+.hero button {
+  width: 330px;
+  background-color: #0070ba;
+  color: #fff;
+  padding: 1.2rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.hero p,
+.hero a {
+  color: #fff;
+}
+.hero p {
+  font-weight: 100;
+}
+.hero p span {
+  font-weight: 400;
+}
+.hero span:hover {
+  text-decoration: underline;
+}
+/* Main */
+
+/* Main:Services Section */
+#services {
+  height: 100%;
+}
+#services h2 {
+  padding: 1rem;
+  text-align: center;
+  font-size: 2.5em;
+}
+.inner-services {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.type {
+  text-align: center;
+  padding: 1rem;
+}
+.type h3 {
+  font-size: 1.5em;
+  padding: 0.6rem;
+}
+.type p {
+  margin: 0.8rem;
+}
+.type button {
+  width: 200px;
+  border: 1px solid #0070ba;
+  color: #0070ba;
+  font-weight: bold;
+  background-color: #fff;
+  padding: 1.2rem 1rem;
+  margin-top: 1.2rem;
+  outline: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+/* Main:Connections Section */
+#connections {
+  height: 100%;
+  background-color: #f5f7fa;
+}
+#connections h2 {
+  padding: 2rem;
+  text-align: center;
+  font-size: 2.5em;
+}
+.tabs {
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tabs a {
+  color: #0070ba;
+  padding: 1rem;
+  font-weight: bold;
+}
+.inner-connections {
+  display: grid;
+  grid-template-columns: 380px 100px 380px 100px 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: 1.7px solid rgb(109, 106, 106);
+  border-radius: 50%;
+  padding: 0.7rem;
+}
+.b-steps img + div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+.b-steps p {
+  color: rgb(78, 68, 68);
+  font-size: 0.9em;
+  text-align: left;
+  margin-left: 0.6rem;
+  flex: 1;
+}
+.con-btn {
+  text-align: center;
+}
+#connections button {
+  width: 200px;
+  border: 1px solid #0070ba;
+  color: #0070ba;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 1.2rem 1rem;
+  outline: none;
+  border-radius: 30px;
+  margin: 1rem;
+  cursor: pointer;
+}
+/* Main:Features Section */
+#features {
+  height: 100%;
+  background-image: radial-gradient(
+    circle farthest-side at center bottom,
+    #009cde,
+    #003087 0
+  );
+  color: #fff;
+}
+#features h2 {
+  text-align: center;
+  padding: 2.5rem;
+  font-weight: 100;
+  font-size: 2.7em;
+  color: #fff;
+}
+.inner-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+.inner-features .feature {
+  padding: 0 2rem;
+}
+
+.feature h3 {
+  font-weight: 200;
+  color: #fff;
+}
+
+.feature p {
+  line-height: 1.8;
+  font-weight: 200;
+  margin-bottom: 3.5rem;
+  font-size: 0.88em;
+}
+
+.feature a {
+  color: #fff;
+  font-weight: bold;
+}
+.feature a:hover {
+  text-decoration: underline;
+}
+.signup {
+  height: 400px;
+  background-color: #f5f7fa;
+  text-align: center;
+}
+
+.signup h2 {
+  margin-top: 2rem;
+  font-weight: 300;
+  font-size: 2em;
+  color: #2c2e2f !important;
+}
+.signup button {
+  width: 330px;
+  background-color: #0070ba;
+  color: #fff;
+  padding: 1.2rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+/* Footer */
+#footer hr {
+  width: 80%;
+  margin: 0 auto;
+}
+#footer p:last-child {
+  font-size: 0.8em;
+  color: #666666;
+  padding: 2rem 6rem 2rem;
+  margin: 0 auto;
+}
+.top-links,
+.bottom-links {
+  display: flex;
+  justify-content: space-between;
+}
+/* Footer:Top Links */
+.t-left,
+.b-left {
+  margin-left: 9rem;
+  margin-bottom: 1rem;
+}
+.t-left a,
+.b-left a {
+  display: inline-block;
+  padding: 0.3rem;
+  color: #666666;
+  font-size: 0.88em;
+  font-weight: bold;
+}
+.t-right {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 8rem;
+}
+.t-right a:first-child {
+  border-right: 1px solid #ccc;
+  color: #666666;
+  padding: 0.6rem;
+  font-size: 0.87em;
+}
+.t-right img {
+  width: 30px;
+}
+/* Footer:Bottom Links */
+.b-left a {
+  font-weight: normal;
+}
+.b-right {
+  margin-right: 8rem;
+}
+.b-right > * {
+  display: inline-block;
+  padding: 0.3rem;
+  color: #666666;
+  font-size: 0.88em;
+}
+/* Media Queries for phone and tab devices */
+@media screen and (max-width: 950px) {
+  .top-header {
+    display: none;
+  }
+  .top-header-mobile {
+    display: flex;
+  }
+  .hero button {
+    width: 200px;
+  }
+  #services h2,
+  #connections h2,
+  #features h2 {
+    font-size: 1.5em;
+  }
+  .inner-services {
+    flex-direction: column;
+  }
+  .inner-connections,
+  .inner-features {
+    grid-template-columns: 1fr;
+  }
+  .inner-features {
+    margin-left: -2rem;
+  }
+  #connections button {
+    width: 130px;
+  }
+  .inner-connections .b-steps:nth-child(2),
+  .inner-connections .b-steps:nth-child(4) {
+    display: none;
+  }
+  .feature {
+    padding: 0;
+    margin-bottom: 1.8rem;
+  }
+  .feature p {
+    margin-bottom: 1rem;
+  }
+  .signup button {
+    width: 300px;
+  }
+  .top-links {
+    flex-direction: column-reverse;
+  }
+  .bottom-links {
+    flex-direction: column;
+  }
+
+  .top-links > *,
+  .bottom-links > * {
+    margin: 0.5rem auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero button {
+    width: 150px;
+  }
+  #connections button {
+    width: 110px;
+  }
+  .signup button {
+    width: 200px;
+  }
+  .top-links > *,
+  .bottom-links > * {
+    font-size: 0.8em;
+  }
+}
